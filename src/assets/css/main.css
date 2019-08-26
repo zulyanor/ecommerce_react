@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400,700|Noto+Sans:400,700&display=swap");
+.header {
+  background-color: #c9e3ac;
+  font-family: "Montserrat";
+}
+.header .menu {
+  display: table;
+  margin-top: 5px;
+}
+.header .menu li {
+  display: table-cell;
+  text-decoration: none;
+}
+.header .menu li a,
+.header .menu-right li a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding: 5px;
+  margin-top: 3px;
+}
+.header .menu li a:hover {
+  font-weight: bold;
+}
+.header .store-name {
+  font-weight: bolder;
+  padding: 5px;
+}
+.header .menu-right {
+  display: table;
+  margin-top: 5px;
+}
+.header .menu-right li {
+  display: table-cell;
+  text-decoration: none;
+}
+.header .menu-right li a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding: 5px;
+  margin-top: 3px;
+}
+.header .menu-right li a:hover {
+  font-weight: bold;
+}
+.home-page {
+  background-color: #cafe48;
+  padding: 50px;
+}
+.home-page .welcome-section .welcome-text {
+  color: black;
+  font-weight: bold;
+  font-family: "Montserrat";
+  margin-top: 100px;
+}
+.home-page .welcome-section .cart-img {
+  margin-top: 20px;
+}
+.home-page .welcome-section .whats-this,
+.home-page .site-desc .to-sign-up-cont .to-sign-up,
+.home-page .sign-up .right-side .push-sign-up,
+.sign-in-content .register-form button,
+.sign-up-content .register-click,
+.main-store .main-store-carousel .left-side .shop-now,
+.cart-content .remove-cart,
+.cart-content .checkout-click,
+.product-details .product-detail-content .add-cart-click,
+.post-product-content .sell-click {
+  background-color: #524948;
+  color: white;
+  font-family: "Montserrat";
+  margin-top: 25px;
+}
+.home-page .site-desc {
+  margin-top: 200px;
+}
+.home-page .site-desc h1 {
+  font-weight: bold;
+}
+.home-page .site-desc .left-side {
+  margin: 0;
+  padding: 100px;
+}
+.home-page .site-desc .to-sign-up-cont {
+  margin-top: 10px;
+}
+.home-page .sign-up {
+  margin-top: 200px;
+}
+.home-page .sign-up .right-side {
+  margin: 0px;
+  padding: 100px;
+}
+.home-page .sign-up .right-side h1 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.home-page .sign-up .right-side .push-sign-up {
+  margin-top: 20px;
+}
+.home-page .sign-up .right-side small {
+  text-decoration: none;
+  color: #524948;
+  margin-top: 1px;
+}
+.sign-in-content {
+  background-color: #c9e3ac;
+  font-family: "Montserrat";
+}
+.sign-in-content .register-form {
+  margin-top: 25px;
+}
+.sign-in-content .register-form h1 {
+  font-weight: bold;
+}
+.sign-in-content .register-form button {
+  margin: 5px;
+}
+.sign-up-content {
+  background-color: #c9e3ac;
+  font-family: "Montserrat";
+  padding: 50px;
+}
+.sign-up-content .sign-up-form {
+  background-color: #eaefbd;
+  border: black 1px solid;
+  padding: 20px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.main-store {
+  font-family: "Montserrat";
+  background-color: #90be6d;
+}
+.main-store .main-store-carousel {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.main-store .main-store-carousel .left-side {
+  padding: 20px;
+}
+.main-store .main-store-carousel .left-side .shop-now {
+  margin-top: 150px;
+}
+.cart-content {
+  font-family: "Montserrat";
+}
+.profile-content {
+  font-family: "Montserrat";
+  margin-top: 30px;
+  padding: 20px;
+}
+.profile-content .user-detail {
+  margin-top: 20px;
+  margin-bottom: 120px;
+}
+.profile-content .user-detail .avatar-profil {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.profile-content .product-section {
+  margin-top: 20px;
+}
+.profile-content .product-section .item-user-list {
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.product-details {
+  font-family: "Montserrat";
+}
+.product-details .product-detail-content {
+  margin-top: 20px;
+}
+.post-product-content {
+  font-family: "Montserrat";
+  background-color: #90be6d;
+  padding: 50px;
+}
+.post-product-content input {
+  margin: 5px 0px;
+}
+.trans-detail {
+  margin-top: 20px;
+  font-family: "Montserrat";
+}
+.trans-detail .trans-list {
+  margin-bottom: 5px;
+}

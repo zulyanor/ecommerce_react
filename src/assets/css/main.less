@@ -1,0 +1,214 @@
+// import font
+@import url("https://fonts.googleapis.com/css?family=Cinzel:400,700|Montserrat:400,700|Noto+Sans:400,700&display=swap");
+
+.header {
+    background-color: #c9e3ac;
+    font-family: "Montserrat";
+    .menu {
+        display: table;
+        margin-top: 5px;
+        .logo {
+        }
+        li {
+            display: table-cell;
+            text-decoration: none;
+            a {
+                text-decoration: none;
+                color: black;
+                font-size: 14px;
+                padding: 5px;
+                margin-top: 3px;
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .store-name {
+        font-weight: bolder;
+        padding: 5px;
+    }
+    .menu-right {
+        display: table;
+        margin-top: 5px;
+        li {
+            display: table-cell;
+            text-decoration: none;
+            a {
+                &:extend(.header .menu li a);
+                text-decoration: none;
+                color: black;
+                font-size: 14px;
+                padding: 5px;
+                margin-top: 3px;
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.home-page {
+    background-color: #cafe48;
+    padding: 50px;
+    .welcome-section {
+        .welcome-text {
+            color: black;
+            font-weight: bold;
+            font-family: "Montserrat";
+            margin-top: 100px;
+        }
+        .cart-img {
+            margin-top: 20px;
+        }
+        .whats-this {
+            background-color: #524948;
+            color: white;
+            font-family: "Montserrat";
+            margin-top: 25px;
+        }
+    }
+    .site-desc {
+        margin-top: 200px;
+        h1 {
+            font-weight: bold;
+        }
+        .left-side {
+            margin: 0;
+            padding: 100px;
+        }
+        .to-sign-up-cont {
+            margin-top: 10px;
+            .to-sign-up {
+                &:extend(.home-page .welcome-section .whats-this);
+            }
+        }
+    }
+    .sign-up {
+        margin-top: 200px;
+        .right-side {
+            margin: 0px;
+            padding: 100px;
+            h1 {
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            .push-sign-up {
+                &:extend(.home-page .welcome-section .whats-this);
+                margin-top: 20px;
+            }
+            small {
+                text-decoration: none;
+                color: #524948;
+                margin-top: 1px;
+            }
+        }
+    }
+}
+
+.sign-in-content {
+    background-color: #c9e3ac;
+    font-family: "Montserrat";
+    .register-form {
+        margin-top: 25px;
+        h1 {
+            font-weight: bold;
+        }
+        button {
+            margin: 5px;
+            &:extend(.home-page .welcome-section .whats-this);
+        }
+    }
+}
+
+.sign-up-content {
+    background-color: #c9e3ac;
+    font-family: "Montserrat";
+    padding: 50px;
+    .sign-up-form {
+        background-color: #eaefbd;
+        border: black 1px solid;
+        padding: 20px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+    .register-click {
+        &:extend(.home-page .welcome-section .whats-this);
+    }
+}
+
+.main-store {
+    font-family: "Montserrat";
+    background-color: #90be6d;
+    .main-store-carousel {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        .left-side {
+            padding: 20px;
+            .shop-now {
+                &:extend(.home-page .welcome-section .whats-this);
+                margin-top: 150px;
+            }
+        }
+    }
+}
+
+.cart-content {
+    font-family: "Montserrat";
+    .remove-cart,
+    .checkout-click {
+        &:extend(.home-page .welcome-section .whats-this);
+    }
+}
+
+.profile-content {
+    font-family: "Montserrat";
+    margin-top: 30px;
+    padding: 20px;
+    .user-detail {
+        margin-top: 20px;
+        margin-bottom: 120px;
+        .avatar-profil {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    .product-section {
+        margin-top: 20px;
+        .item-user-list {
+            margin-bottom: 5px;
+            padding: 10px;
+        }
+    }
+}
+
+.product-details {
+    font-family: "Montserrat";
+    .product-detail-content {
+        margin-top: 20px;
+        .add-cart-click {
+            &:extend(.home-page .welcome-section .whats-this);
+        }
+    }
+}
+
+.post-product-content {
+    font-family: "Montserrat";
+    background-color: #90be6d;
+    padding: 50px;
+    input {
+        margin: 5px 0px;
+    }
+    .sell-click {
+        &:extend(.home-page .welcome-section .whats-this);
+    }
+}
+
+.trans-detail {
+    margin-top: 20px;
+    font-family: "Montserrat";
+    .trans-list {
+        margin-bottom: 5px;
+    }
+}
