@@ -31,4 +31,3 @@ after_script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_8dbd7fa91a5b_key -iv $encrypted_8dbd7fa91a5b_iv
   -in deploy_rsa.enc -out deploy_rsa -d
-
