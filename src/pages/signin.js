@@ -41,9 +41,7 @@ export class SignIn extends React.Component {
                 password: self.state.password
             })
             .then(response => {
-                console.log(response.data);
                 localStorage.setItem("token", response.data.token);
-                console.log("props login", this.props.is_login);
                 Toast.fire({
                     type: "success",
                     title: "You have been signed in!"
@@ -55,7 +53,6 @@ export class SignIn extends React.Component {
             });
     };
     render() {
-        console.log(this.state);
         return (
             <div className="sign-in-content w-100">
                 <div className="container">

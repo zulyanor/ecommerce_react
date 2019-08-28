@@ -29,31 +29,26 @@ class SignUp extends React.Component {
 
     setUserId = event => {
         event.preventDefault();
-        console.log("user_id", event.target.value);
         this.setState({ user_id: event.target.value });
     };
 
     setFullName = event => {
         event.preventDefault();
-        console.log("full_name", event.target.value);
         this.setState({ full_name: event.target.value });
     };
 
     setAddress = event => {
         event.preventDefault();
-        console.log("address", event.target.value);
         this.setState({ address: event.target.value });
     };
 
     setSex = event => {
         event.preventDefault();
-        console.log("sex", event.target.value);
         this.setState({ sex: event.target.value });
     };
 
     setPhone = event => {
         event.preventDefault();
-        console.log("phone", event.target.value);
         this.setState({ phone: event.target.value });
     };
 
@@ -73,7 +68,6 @@ class SignUp extends React.Component {
         await axios
             .post("https://api.zulyano.xyz/register", dataUser)
             .then(response => {
-                console.log(response.data);
                 self.props.history.push("/signin");
             })
             .catch(error => {

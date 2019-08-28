@@ -22,7 +22,6 @@ class Cart extends React.Component {
     handleChange = event => {
         event.preventDefault();
         this.setState({ paymentMethod: event.target.value });
-        console.log("pay", this.state.paymentMethod);
     };
 
     handleDelete = async id => {
@@ -42,7 +41,6 @@ class Cart extends React.Component {
             text: "Product deleted"
         });
         this.props.history.push("/store");
-        console.log(response.data);
     };
 
     componentDidMount = async () => {
@@ -55,8 +53,6 @@ class Cart extends React.Component {
                 }
             })
             .then(response => {
-                console.log("get cart", response.data);
-                console.log(this.state.paymentMethod);
                 this.setState({
                     listCart: response.data
                 });
@@ -81,13 +77,11 @@ class Cart extends React.Component {
                 config
             )
             .then(response => {
-                console.log(response.data);
                 Swal.fire(
                     "Good job!",
                     "Transaction has been processed",
                     "success"
                 );
-                console.log(this.props);
                 this.props.history.push("/store");
             })
             .catch(error => {
@@ -102,7 +96,6 @@ class Cart extends React.Component {
                 <div className="container cart">
                     <div className="row justify-content-center">
                         {this.state.listCart.map((item, index) => {
-                            console.log("item", item);
                             return (
                                 <div className="col-md-12 col-sm-6 col-12 border shadow cart-list">
                                     <p>product id: {item.product_id}</p>

@@ -24,7 +24,6 @@ class TransDetail extends React.Component {
                 }
             )
             .then(response => {
-                console.log("detail trans", response.data);
                 self.setState({
                     detailList: response.data
                 });

@@ -18,9 +18,7 @@ export class MainStore extends React.Component {
         await axios
             .get("https://api.zulyano.xyz/product/all")
             .then(response => {
-                console.log("get product", response.data);
                 self.props.setListProduct(response.data);
-                console.log("listprod", self.props.listProduct);
             })
             .catch(error => {
                 console.log("error product", error);

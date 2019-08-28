@@ -20,43 +20,36 @@ export class Sell extends React.Component {
 
     setName = event => {
         event.preventDefault();
-        console.log("name", event.target.value);
         this.setState({ name: event.target.value });
     };
 
     setStock = event => {
         event.preventDefault();
-        console.log("stock", event.target.value);
         this.setState({ stock: event.target.value });
     };
 
     setPrice = event => {
         event.preventDefault();
-        console.log("price", event.target.value);
         this.setState({ price: event.target.value });
     };
 
     setImage = event => {
         event.preventDefault();
-        console.log("img", event.target.value);
         this.setState({ image: event.target.value });
     };
 
     setLocation = event => {
         event.preventDefault();
-        console.log("img", event.target.value);
         this.setState({ location: event.target.value });
     };
 
     setDescription = event => {
         event.preventDefault();
-        console.log("desc", event.target.value);
         this.setState({ description: event.target.value });
     };
 
     setWeight = event => {
         event.preventDefault();
-        console.log("img", event.target.value);
         this.setState({ weight: event.target.value });
     };
 
@@ -80,7 +73,6 @@ export class Sell extends React.Component {
         await axios
             .post("https://api.zulyano.xyz/product", dataItem, config)
             .then(response => {
-                console.log(response.data);
                 Swal.fire("Good job!", "Product(s) added to store!", "success");
                 this.props.history.push("/store");
             })

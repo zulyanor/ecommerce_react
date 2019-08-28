@@ -40,7 +40,6 @@ class ProductDetail extends React.Component {
                 config
             )
             .then(response => {
-                console.log(response);
                 Swal.fire("Good job!", "Product(s) added to cart!", "success");
                 self.props.history.push("/store");
             })
@@ -56,14 +55,12 @@ class ProductDetail extends React.Component {
 
     componentDidMount = async () => {
         const self = this;
-        console.log("token store di detil", this.props.token);
         await axios
             .get(
                 "https://api.zulyano.xyz/product_details/" +
                     String(self.props.match.params.id)
             )
             .then(response => {
-                console.log("get product", response.data);
                 this.setState({
                     description: response.data.description,
                     location: response.data.location,

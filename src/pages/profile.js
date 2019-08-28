@@ -25,25 +25,21 @@ export class Profile extends React.Component {
 
     setFullName = event => {
         event.preventDefault();
-        console.log("full_name", event.target.value);
         this.setState({ full_name: event.target.value });
     };
 
     setAddress = event => {
         event.preventDefault();
-        console.log("address", event.target.value);
         this.setState({ address: event.target.value });
     };
 
     setSex = event => {
         event.preventDefault();
-        console.log("sex", event.target.value);
         this.setState({ sex: event.target.value });
     };
 
     setPhone = event => {
         event.preventDefault();
-        console.log("phone", event.target.value);
         this.setState({ phone: event.target.value });
     };
 
@@ -56,7 +52,7 @@ export class Profile extends React.Component {
             }
         };
         let response = await axios(config).catch(error => {
-            console.log(error);
+            console.log("error user_details", error);
         });
         Swal.fire({
             type: "error",
@@ -64,7 +60,6 @@ export class Profile extends React.Component {
             text: "Product deleted"
         });
         this.props.history.push("/store");
-        console.log(response.data);
     };
 
     componentDidMount = async () => {
@@ -77,7 +72,6 @@ export class Profile extends React.Component {
         await axios
             .get("https://api.zulyano.xyz/user_details", config)
             .then(response => {
-                console.log("get user_details", response.data);
                 this.setState({
                     full_name: response.data.full_name,
                     address: response.data.address,
@@ -92,7 +86,6 @@ export class Profile extends React.Component {
         await axios
             .get("https://api.zulyano.xyz/transaction/list", config)
             .then(response => {
-                console.log("trans", response.data);
                 this.setState({ transactionList: response.data });
             })
             .catch(error => {
@@ -102,7 +95,6 @@ export class Profile extends React.Component {
         await axios
             .get("https://api.zulyano.xyz/product/user", config)
             .then(response => {
-                console.log("product user", response.data);
                 this.setState({ productList: response.data });
             })
             .catch(error => {
