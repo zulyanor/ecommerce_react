@@ -1,7 +1,10 @@
 sudo: required
-language: generic
+language: node_js
+node_js:
+- "stable"
 services:
 - docker
+- npm
 os:
 - linux
 env:
@@ -18,6 +21,7 @@ before_script:
 script:
 - sudo chmod +x deploy.sh
 - sudo chmod 600 deploy_rsa
+- CI=false npm run build
 after_script:
 - docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
 - docker build -t ${DOCKER_HUB_ORG}/${DOCKER_IMAGE_NAME}:production-${TRAVIS_BUILD_ID}
