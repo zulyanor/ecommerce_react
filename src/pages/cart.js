@@ -28,7 +28,7 @@ class Cart extends React.Component {
     handleDelete = async id => {
         let config = {
             method: "delete",
-            url: "http://0.0.0.0:5000/cart/" + String(id),
+            url: "https://api.zulyano.xyz/cart/" + String(id),
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
             }
@@ -36,7 +36,11 @@ class Cart extends React.Component {
         let response = await axios(config).catch(error => {
             console.log(error);
         });
-        Swal.fire("Good job!", "Transaction has been processed", "success");
+        Swal.fire({
+            type: "error",
+            title: "Success",
+            text: "Product deleted"
+        });
         this.props.history.push("/store");
         console.log(response.data);
     };
@@ -44,7 +48,7 @@ class Cart extends React.Component {
     componentDidMount = async () => {
         const self = this;
         await axios
-            .get("http://0.0.0.0:5000/cart", {
+            .get("https://api.zulyano.xyz/cart", {
                 params: {},
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token")
@@ -72,7 +76,7 @@ class Cart extends React.Component {
         };
         await axios
             .post(
-                "http://0.0.0.0:5000/transaction",
+                "https://api.zulyano.xyz/transaction",
                 { payment_method: self.state.paymentMethod },
                 config
             )
@@ -96,15 +100,15 @@ class Cart extends React.Component {
             <div className="cart-content">
                 <Header />
                 <div className="container cart">
-                    <div className="row">
+                    <div className="row justify-content-center">
                         {this.state.listCart.map((item, index) => {
                             console.log("item", item);
                             return (
-                                <div className="col-md-12 col-sm-6 col-12 border shadow">
-                                    <h3>product id: {item.product_id}</h3>
-                                    <h3>product name: {item.product_name}</h3>
-                                    <h3>quantity: {item.qty}</h3>
-                                    <h3>total price: {item.price}</h3>
+                                <div className="col-md-12 col-sm-6 col-12 border shadow cart-list">
+                                    <p>product id: {item.product_id}</p>
+                                    <p>product name: {item.product_name}</p>
+                                    <p>quantity: {item.qty}</p>
+                                    <p>total price: {item.price}</p>
                                     <button
                                         className="btn remove-cart"
                                         onClick={() =>
@@ -117,27 +121,33 @@ class Cart extends React.Component {
                             );
                         })}
                     </div>
-                    <div className="payment-method">
-                        <select
-                            className="browser-default custom-select"
-                            onChange={this.handleChange}
-                        >
-                            <option selected value="COD">
-                                Cash on Delivery
-                            </option>
-                            <option value="ATM">ATM Transfer</option>
-                            <option value="Mbanking">Mobile Banking</option>
-                        </select>
+                    <div className="row checkout-section justify-content-left">
+                        <div className="col-md-3">
+                            <div className="payment-method">
+                                <select
+                                    className="browser-default custom-select"
+                                    onChange={this.handleChange}
+                                >
+                                    <option selected value="COD">
+                                        Cash on Delivery
+                                    </option>
+                                    <option value="ATM">ATM Transfer</option>
+                                    <option value="Mbanking">
+                                        Mobile Banking
+                                    </option>
+                                </select>
+                            </div>
+                            <Link to="/transaction">
+                                <button
+                                    type="submit"
+                                    className="btn checkout-click"
+                                    onClick={this.doTransaction}
+                                >
+                                    Chekout
+                                </button>
+                            </Link>
+                        </div>
                     </div>
-                    <Link to="/transaction">
-                        <button
-                            type="submit"
-                            className="btn checkout-click"
-                            onClick={this.doTransaction}
-                        >
-                            Chekout
-                        </button>
-                    </Link>
                 </div>
             </div>
         );

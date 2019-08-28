@@ -71,7 +71,7 @@ class SignUp extends React.Component {
             deleted: false
         };
         await axios
-            .post("http://0.0.0.0:5000/register", dataUser)
+            .post("https://api.zulyano.xyz/register", dataUser)
             .then(response => {
                 console.log(response.data);
                 self.props.history.push("/signin");

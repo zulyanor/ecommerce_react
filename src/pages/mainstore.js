@@ -16,7 +16,7 @@ export class MainStore extends React.Component {
     componentDidMount = async () => {
         const self = this;
         await axios
-            .get("http://0.0.0.0:5000/product/all")
+            .get("https://api.zulyano.xyz/product/all")
             .then(response => {
                 console.log("get product", response.data);
                 self.props.setListProduct(response.data);
@@ -40,7 +40,7 @@ export class MainStore extends React.Component {
                                 <div className="col-5 justify-content-center left-side">
                                     <button
                                         type="button"
-                                        className="btn btn-lg shop-now"
+                                        className="btn btn-lg shop-now animated fadeInDown"
                                         onClick={() =>
                                             scrollToComponent(this.Store, {
                                                 offset: 0,

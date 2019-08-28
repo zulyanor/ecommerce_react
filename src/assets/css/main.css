@@ -62,8 +62,7 @@
 .home-page .sign-up .right-side .push-sign-up,
 .sign-in-content .register-form button,
 .sign-up-content .register-click,
-.main-store .main-store-carousel .left-side .shop-now,
-.cart-content .remove-cart,
+.cart-content .cart-list .remove-cart,
 .cart-content .checkout-click,
 .product-details .product-detail-content .add-cart-click,
 .post-product-content .sell-click {
@@ -131,7 +130,6 @@
 }
 .main-store {
   font-family: "Montserrat";
-  background-color: #90be6d;
 }
 .main-store .main-store-carousel {
   margin-top: 30px;
@@ -141,10 +139,19 @@
   padding: 20px;
 }
 .main-store .main-store-carousel .left-side .shop-now {
+  background-color: #90be6d;
+  color: white;
   margin-top: 150px;
 }
 .cart-content {
   font-family: "Montserrat";
+}
+.cart-content .cart-list {
+  padding: 10px;
+  margin-bottom: 5px;
+}
+.cart-content .cart-list .remove-cart {
+  padding: 10px;
 }
 .profile-content {
   font-family: "Montserrat";
@@ -155,9 +162,26 @@
   margin-top: 20px;
   margin-bottom: 120px;
 }
+.profile-content .user-detail .profile-detail {
+  margin: 50px;
+}
 .profile-content .user-detail .avatar-profil {
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 20px;
+}
+.profile-content .user-detail .profile-button {
+  padding: 20px;
+  font-family: "Montserrat";
+}
+.profile-content .user-detail .profile-button .button-transaction {
+  background-color: #90be6d;
+  color: white;
+  margin-bottom: 15px;
+}
+.profile-content .user-detail .profile-button .button-item {
+  background-color: #90be6d;
+  color: white;
 }
 .profile-content .product-section {
   margin-top: 20px;
@@ -165,6 +189,13 @@
 .profile-content .product-section .item-user-list {
   margin-bottom: 5px;
   padding: 10px;
+}
+.profile-content .product-section .delete-product {
+  background-color: #90be6d;
+  color: white;
+}
+.profile-content .transaction {
+  margin-bottom: 5px;
 }
 .product-details {
   font-family: "Montserrat";
@@ -185,5 +216,5 @@
   font-family: "Montserrat";
 }
 .trans-detail .trans-list {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }

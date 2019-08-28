@@ -53,7 +53,7 @@ function Header(props) {
                             </ul>
                         </div>
                         <div className="col-md-4 text-center store-name">
-                            <h1>PLANT</h1>
+                            <h1>GREEN HOUSE</h1>
                         </div>
                         <div className="col-md-4 menu-right text-right">
                             <ul>

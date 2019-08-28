@@ -3,6 +3,7 @@ import axios from "axios";
 import { connect } from "unistore/react";
 import { Link } from "react-router-dom";
 import scrollToComponent from "react-scroll-to-component";
+import Swal from "sweetalert2";
 import Avatar from "../assets/img/man.png";
 import Header from "../components/header";
 import { actions } from "../store/store";
@@ -46,6 +47,26 @@ export class Profile extends React.Component {
         this.setState({ phone: event.target.value });
     };
 
+    handleDelete = async id => {
+        let config = {
+            method: "delete",
+            url: "https://api.zulyano.xyz/product/" + String(id),
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token")
+            }
+        };
+        let response = await axios(config).catch(error => {
+            console.log(error);
+        });
+        Swal.fire({
+            type: "error",
+            title: "Success",
+            text: "Product deleted"
+        });
+        this.props.history.push("/store");
+        console.log(response.data);
+    };
+
     componentDidMount = async () => {
         const self = this;
         var config = {
@@ -54,7 +75,7 @@ export class Profile extends React.Component {
             }
         };
         await axios
-            .get("http://0.0.0.0:5000/user_details", config)
+            .get("https://api.zulyano.xyz/user_details", config)
             .then(response => {
                 console.log("get user_details", response.data);
                 this.setState({
@@ -69,7 +90,7 @@ export class Profile extends React.Component {
             });
 
         await axios
-            .get("http://0.0.0.0:5000/transaction/list", config)
+            .get("https://api.zulyano.xyz/transaction/list", config)
             .then(response => {
                 console.log("trans", response.data);
                 this.setState({ transactionList: response.data });
@@ -79,7 +100,7 @@ export class Profile extends React.Component {
             });
 
         await axios
-            .get("http://0.0.0.0:5000/product/user", config)
+            .get("https://api.zulyano.xyz/product/user", config)
             .then(response => {
                 console.log("product user", response.data);
                 this.setState({ productList: response.data });
@@ -95,33 +116,82 @@ export class Profile extends React.Component {
                 <Header />
                 <div className="container">
                     <div className="row justify-content-center profile-content">
-                        <div className="col-md-8 text-center user-detail">
-                            <h3>Welcome, {this.state.full_name}</h3>
-                            <div className="avatar-profil mx-3">
-                                <img
-                                    src={Avatar}
-                                    height="200px"
-                                    width="200px"
-                                />
-                            </div>
-                            <div className="user-detail text-center">
-                                <div className="">
-                                    <h4>address:</h4>
-                                    <h6>{this.state.address}</h6>
+                        <h3 className="animated fadeInDown">
+                            Welcome, {this.state.full_name}
+                        </h3>
+                        <div className="col-md-12 user-detail animated fadeInDown delay-1s">
+                            <div className="row profile-detail">
+                                <div className="col-md-3 avatar-profil">
+                                    <div className="mx-3">
+                                        <img
+                                            src={Avatar}
+                                            height="200px"
+                                            width="200px"
+                                        />
+                                    </div>
                                 </div>
-                                <div className="">
-                                    <h4>sex:</h4>
-                                    <h6>{this.state.sex}</h6>
+                                <div className="col-md-6 text-center">
+                                    <div className="user-data">
+                                        <div className="data-address">
+                                            <h4>address:</h4>
+                                            <h6>{this.state.address}</h6>
+                                        </div>
+                                        <div className="data-sex">
+                                            <h4>sex:</h4>
+                                            <h6>{this.state.sex}</h6>
+                                        </div>
+                                        <div className="data-phone">
+                                            <h4>phone:</h4>
+                                            <h6>{this.state.phone}</h6>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="">
-                                    <h4>phone:</h4>
-                                    <h6>{this.state.phone}</h6>
+                                <div className="col-md-3 profile-button">
+                                    <div className="button-transaction">
+                                        <button
+                                            className="btn"
+                                            onClick={() =>
+                                                scrollToComponent(
+                                                    this.Transection,
+                                                    {
+                                                        offset: 0,
+                                                        align: "top",
+                                                        duration: 1000
+                                                    }
+                                                )
+                                            }
+                                        >
+                                            See my transactions
+                                        </button>
+                                    </div>
+                                    <div className="button-item">
+                                        <button
+                                            className="btn"
+                                            onClick={() =>
+                                                scrollToComponent(
+                                                    this.Prodsection,
+                                                    {
+                                                        offset: 0,
+                                                        align: "top",
+                                                        duration: 1000
+                                                    }
+                                                )
+                                            }
+                                        >
+                                            See my items
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <br />
                         <div className="row justify-content-center">
-                            <div className="transaction-section col-12">
+                            <div
+                                className="transaction-section col-12"
+                                ref={section => {
+                                    this.Transection = section;
+                                }}
+                            >
                                 <h2>Transaction History</h2>
                                 <div>
                                     {this.state.transactionList.map(
@@ -158,7 +228,12 @@ export class Profile extends React.Component {
                                     )}
                                 </div>
                             </div>
-                            <div className="product-section col-12">
+                            <div
+                                className="product-section col-12"
+                                ref={section => {
+                                    this.Prodsection = section;
+                                }}
+                            >
                                 <h2>Your item list</h2>
                                 <div>
                                     {this.state.productList.map(
@@ -186,7 +261,16 @@ export class Profile extends React.Component {
                                                         stock:{" "}
                                                         {item.product_stock}
                                                     </div>
-                                                    <button>delete</button>
+                                                    <button
+                                                        onClick={() =>
+                                                            this.handleDelete(
+                                                                item.product_id
+                                                            )
+                                                        }
+                                                        className="delete-product btn"
+                                                    >
+                                                        delete
+                                                    </button>
                                                 </div>
                                             );
                                         }

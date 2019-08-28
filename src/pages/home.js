@@ -9,9 +9,9 @@ export class Home extends React.Component {
             <div className="home-page w-100">
                 <div className="container">
                     <div className="row justify-content-center welcome-section">
-                        <div className="col-md-8 text-center">
+                        <div className="col-md-8 col-sm-12 text-center">
                             <h1 className="welcome-text animated delay-1s fadeInDownBig">
-                                Welcome
+                                Welcome to Green House
                             </h1>
                             <img
                                 src={keranjang}
@@ -42,7 +42,7 @@ export class Home extends React.Component {
                             this.Desc = section;
                         }}
                     >
-                        <div className="col-md-6 text-center left-side">
+                        <div className="col-md-6 col-sm-12 text-center left-side">
                             <div className="d-flex align-items-center">
                                 <h1>The Best Place to Sell or Buy Plants</h1>
                             </div>
@@ -63,8 +63,11 @@ export class Home extends React.Component {
                                 </button>
                             </div>
                         </div>
-                        <div className="col-md-6 text-center img-home-one">
-                            <img src="https://image.flaticon.com/sprites/new_packs/226663-ecology.png" />
+                        <div className="col-md-6 col-sm-12 text-center img-home-one w-100">
+                            <img
+                                src="https://image.flaticon.com/sprites/new_packs/226663-ecology.png"
+                                width="100%"
+                            />
                         </div>
                     </div>
                     <div
@@ -73,18 +76,21 @@ export class Home extends React.Component {
                             this.Signup = section;
                         }}
                     >
-                        <div className="col-md-6 img-home-two">
-                            <img src="https://image.flaticon.com/sprites/new_packs/628264-house-plants.png" />
+                        <div className="col-md-6 col-sm-12 img-home-two w-100">
+                            <img
+                                src="https://image.flaticon.com/sprites/new_packs/628264-house-plants.png"
+                                width="100%"
+                            />
                         </div>
                         <div className="col-md-6 text-center right-side">
                             <div className="">
-                                <h1>Sign Up Now</h1>
+                                <h1>Join Us Now!</h1>
                                 <Link to="/signup">
                                     <button
                                         type="button"
                                         className="btn btn-lg animated bounce infinite delay-2s push-sign-up"
                                     >
-                                        <h3>Sign Up now!</h3>
+                                        <h3>Sign Up!</h3>
                                     </button>
                                 </Link>
                                 <br />

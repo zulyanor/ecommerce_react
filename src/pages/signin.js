@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import { connect } from "unistore/react";
 import Swal from "sweetalert2";
 import plant from "../assets/img/plant.png";
-import { connect } from "unistore/react";
 import { actions } from "../store/store";
 
 export class SignIn extends React.Component {
@@ -36,7 +36,7 @@ export class SignIn extends React.Component {
             timer: 2000
         });
         await axios
-            .post("http://0.0.0.0:5000/login", {
+            .post("https://api.zulyano.xyz/login", {
                 username: self.state.username,
                 password: self.state.password
             })

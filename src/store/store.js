@@ -25,7 +25,7 @@ const initialState = {
     token: "",
 
     // api
-    localhost: "http://0.0.0.0:5000",
+    baseUrl: "https://api.zulyano.xyz",
     loginPoint: "/login",
     registerPoint: "/register"
 };

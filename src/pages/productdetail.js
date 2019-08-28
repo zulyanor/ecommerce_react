@@ -32,7 +32,7 @@ class ProductDetail extends React.Component {
         };
         await axios
             .post(
-                "http://0.0.0.0:5000/cart",
+                "https://api.zulyano.xyz/cart",
                 {
                     product_id: this.state.productId,
                     qty: this.state.quantity
@@ -59,7 +59,7 @@ class ProductDetail extends React.Component {
         console.log("token store di detil", this.props.token);
         await axios
             .get(
-                "http://0.0.0.0:5000/product_details/" +
+                "https://api.zulyano.xyz/product_details/" +
                     String(self.props.match.params.id)
             )
             .then(response => {
@@ -75,7 +75,7 @@ class ProductDetail extends React.Component {
             });
         await axios
             .get(
-                "http://0.0.0.0:5000/product/" +
+                "https://api.zulyano.xyz/product/" +
                     String(self.props.match.params.id)
             )
             .then(response => {
@@ -105,9 +105,15 @@ class ProductDetail extends React.Component {
                             <h2 class="font-weight-bold">
                                 {this.state.productName.toUpperCase()}
                             </h2>
+                            <br />
+                            <br />
                             <h5>Price: {this.state.productPrice}</h5>
                             <br />
                             <h5>Stock: {this.state.productStock}</h5>
+                            <br />
+                            <h5>Location: {this.state.location}</h5>
+                            <br />
+                            <h5>Weight: {this.state.weight}</h5>
                             <br />
                             <br />
                             <h6>{this.state.description}</h6>
@@ -130,6 +136,7 @@ class ProductDetail extends React.Component {
                                         Total Price
                                     </h4>
                                     <h5>
+                                        $
                                         {this.state.quantity *
                                             this.state.productPrice}
                                     </h5>

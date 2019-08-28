@@ -14,7 +14,7 @@ class TransDetail extends React.Component {
         const self = this;
         await axios
             .get(
-                "http://0.0.0.0:5000/transaction_details/" +
+                "https://api.zulyano.xyz/transaction_details/" +
                     String(self.props.match.params.id),
                 {
                     params: {},
@@ -61,7 +61,7 @@ class TransDetail extends React.Component {
                                             {transactionDetail.quantity}
                                         </div>
                                         <div>
-                                            price:{" "}
+                                            price:$
                                             {transactionDetail.total_price}
                                         </div>
                                     </div>

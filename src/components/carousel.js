@@ -10,7 +10,7 @@ function CarouselHome() {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="https://i2.wp.com/galveston.agrilife.org/files/2017/02/Bonsai-March-11-2017.jpg?fit=1000%2C801&ssl=1"
+                                src="https://designkollective-production.imgix.net/iu_store/zJdNlFxiS5UdlI2EoIFFdDq35yCldH6HrbvwYxCilj?fit=fill&fm=auto%2Cpjpg&auto=compress%2Cformat&pad=20&bg=fff&trim=color&w=1280&h=1280"
                                 alt="First slide"
                                 height="400px"
                             />
@@ -22,7 +22,7 @@ function CarouselHome() {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="https://matalan-content.imgix.net/uploads/asset_file/asset_file/201106/1543833184.6458428-S2703945_C211_Alt1.jpg?ixlib=rails-2.1.4&auto=format%2Ccompress&cs=tinysrgb&s=7fcc8318bebbe38309b342336e93962e"
+                                src="https://www.gdbobalcons-shop.com/Files/19849/Img/02/bonsai-ficus-en-coupe-18024b-lou.jpg"
                                 alt="Third slide"
                                 height="400px"
                             />
@@ -35,7 +35,7 @@ function CarouselHome() {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="https://image.dhgate.com/0x0/f2/albu/g8/M00/BF/9F/rBVaVFwgqJOAVJ6nAAxn6KCLUeM437.jpg"
+                                src="https://www.fleursdelasagesse.com/crud/assets/uploads/files/images/items/cd7b5-412.jpg"
                                 alt="Third slide"
                                 height="400px"
                             />

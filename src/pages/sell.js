@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import Header from "../components/header";
 
 export class Sell extends React.Component {
@@ -77,9 +78,11 @@ export class Sell extends React.Component {
             }
         };
         await axios
-            .post("http://0.0.0.0:5000/product", dataItem, config)
+            .post("https://api.zulyano.xyz/product", dataItem, config)
             .then(response => {
                 console.log(response.data);
+                Swal.fire("Good job!", "Product(s) added to store!", "success");
+                this.props.history.push("/store");
             })
             .catch(error => {
                 console.log(error);
