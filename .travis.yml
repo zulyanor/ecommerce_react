@@ -9,7 +9,7 @@ env:
   - DOCKER_IMAGE_NAME="react-tutorial"
   - DOCKER_HUB_ORG="zulyano"
 before_script:
-- openssl aes-256-cbc -K $encrypted_bc18fab25fe5_key -iv $encrypted_bc18fab25fe5_iv
+- openssl aes-256-cbc -K $encrypted_8dbd7fa91a5b_key -iv $encrypted_8dbd7fa91a5b_iv
   -in deploy_rsa.enc -out deploy_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 deploy_rsa
@@ -31,5 +31,4 @@ after_script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_8dbd7fa91a5b_key -iv $encrypted_8dbd7fa91a5b_iv
   -in deploy_rsa.enc -out deploy_rsa -d
-- openssl aes-256-cbc -K $encrypted_bc18fab25fe5_key -iv $encrypted_bc18fab25fe5_iv
-  -in deploy_rsa.enc -out deploy_rsa -d
+
