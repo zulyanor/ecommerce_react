@@ -11,7 +11,7 @@ export class Home extends React.Component {
                     <div className="row justify-content-center welcome-section">
                         <div className="col-md-8 col-sm-12 text-center">
                             <h1 className="welcome-text animated delay-1s fadeInDownBig">
-                                Travis Tes Oke
+                                Welcome to Green House
                             </h1>
                             <img
                                 src={keranjang}
